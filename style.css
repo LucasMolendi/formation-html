@@ -1,13 +1,16 @@
 body {
-    background-color: rgb(107, 107, 212);
+    background-color: rgb(45, 45, 219);
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
-
+.object1{
+    display:flex;
+    justify-content: center;
+}
 .raton {
     padding: 0%;
-    width: 100%;
+    width: 10%;
     height: auto;
     display: flex;
     justify-content: center;
