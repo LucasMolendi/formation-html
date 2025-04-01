@@ -30,3 +30,21 @@ td {
     justify-content: center;
     flex-direction: row-reverse;
 }
+
+.playground {
+    width: 300px;
+    height: 300px;
+    border: 2px solid #000;
+    position: 200px;
+    margin: 20px auto;
+    box-sizing: content-box;
+}
+                
+.movable-box {
+    width: 50px;
+    height: 50px;
+    background-color: #3498db;
+    position: absolute;
+    top: 0;
+    left: 0;
+}

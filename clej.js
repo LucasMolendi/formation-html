@@ -1,19 +1,38 @@
-const image = document.createElement('img'); // Crée un élément image
-image.src = 'tel.jpg'; // Définit la source de l'image
-image.style.position = 'absolute'; // Positionne l'image de manière absolue
-image.style.width = '100px'; // Définit la largeur de l'image
-image.style.height = '100px'; // Définit la hauteur de l'image
-document.body.appendChild(image); // Ajoute l'image au corps du document
+document.addEventListener('keydown', function(event) {
+  const box = document.querySelector('.movable-box');
+  const step = 10;
+  const playground = box.parentNode;
 
-function moveImage() {
-  const maxX = window.innerWidth - image.offsetWidth; // Calcule la largeur maximale
-  const maxY = window.innerHeight - image.offsetHeight; // Calcule la hauteur maximale
+  const currentTop = parseInt(box.style.top, 10) || 0;
+  const currentLeft = parseInt(box.style.left, 10) || 0;
 
-  const randomX = Math.floor(Math.random() * maxX); // Génère une position X aléatoire
-  const randomY = Math.floor(Math.random() * maxY); // Génère une position Y aléatoire
+  const maxTop = playground.clientHeight - box.offsetHeight;
+  const maxLeft = playground.clientWidth - box.offsetWidth;
 
-  image.style.left = randomX + 'px'; // Définit la position X de l'image
-  image.style.top = randomY + 'px'; // Définit la position Y de l'image
-}
+  if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) {
+      event.preventDefault();
+  }
 
-setInterval(moveImage, 1000); // Déplace l'image toutes les 1 secondes
+  switch (event.key) {
+      case 'ArrowUp':
+          if (currentTop - step >= 0) {
+              box.style.top = `${currentTop - step}px`;
+          }
+          break;
+      case 'ArrowDown':
+          if (currentTop + step <= maxTop) {
+              box.style.top = `${currentTop + step}px`;
+          }
+          break;
+      case 'ArrowLeft':
+          if (currentLeft - step >= 0) {
+              box.style.left = `${currentLeft - step}px`;
+          }
+          break;
+      case 'ArrowRight':
+          if (currentLeft + step <= maxLeft) {
+              box.style.left = `${currentLeft + step}px`;
+          }
+          break;
+  }
+});
