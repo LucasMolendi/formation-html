@@ -20,8 +20,8 @@ th {
     padding: 10px;
     text-align: center;
     font-size: 20px;
-    border: 2px solid salmon;
-    color : aqua;
+    border: 2px solid rgb(49, 22, 22);
+    color : rgb(49, 102, 102);
 }
 td {
     padding: 10px;
@@ -32,7 +32,7 @@ td {
 }
 .object1{
     display:flex;
-    justify-content: center;
+    flex-direction: row;
 }
 .raton {
     padding: 0%;
@@ -40,7 +40,6 @@ td {
     height: auto;
     display: flex;
     justify-content: center;
-    flex-direction: row-reverse;
 }
 
 .playground {
