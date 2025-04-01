@@ -36,3 +36,7 @@ document.addEventListener('keydown', function(event) {
           break;
   }
 });
+
+let criocelot = new Audio("ocelot.mp3");
+
+criocelot.play();
