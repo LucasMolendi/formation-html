@@ -25,6 +25,3 @@ document.addEventListener('keydown', function(event) {
   }
 });
 
-let criocelot = new Audio("ocelot.mp3");
-
-criocelot.play();
